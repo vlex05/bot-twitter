@@ -77,7 +77,4 @@ def WhaleTrackerENS():
           time.sleep(30)
           pass
 keep_alive()
-while True:
-  x=1
-
-#WhaleTrackerENS()
+WhaleTrackerENS()
