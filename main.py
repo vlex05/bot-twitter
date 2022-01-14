@@ -74,10 +74,10 @@ def WhaleTrackerENS():
                     print('rien de nouveau')
             else:
                 print('rien de nouveau')
-            time.sleep(120)
+            time.sleep(300)
         except:
           print('erreur !')
-          time.sleep(30)
+          time.sleep(300)
           pass
 keep_alive()
 WhaleTrackerENS()
