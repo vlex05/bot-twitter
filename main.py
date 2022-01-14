@@ -61,6 +61,9 @@ def WhaleTrackerENS():
 
                     before_owner = message[message.find('</span></a><span class=\'text-secondary mr-1 d-inline-block\'>From</span><span class=\' hash-tag text-truncate mr-1\'><a href=\'/address/')+len('</span></a><span class=\'text-secondary mr-1 d-inline-block\'>From</span><span class=\' hash-tag text-truncate mr-1\'><a href=\'/address/'):message.find('</span></a><span class=\'text-secondary mr-1 d-inline-block\'>From</span><span class=\' hash-tag text-truncate mr-1\'><a href=\'/address/')+len('</span></a><span class=\'text-secondary mr-1 d-inline-block\'>From</span><span class=\' hash-tag text-truncate mr-1\'><a href=\'/address/')+8]
 
+                    if before_owner[:2] != '0x':
+                      error
+
                     tweet_text = tweet_texte(eth_price, last_eth_domain,eth_domain,usd_price,actual_owner,before_owner,json_url)
 
                     print('tweet')
