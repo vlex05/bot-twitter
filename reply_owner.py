@@ -12,11 +12,13 @@ def reply_owner(json_url,driver,api,post_result):
         tweetos = driver.find_element(By.XPATH,'/html/body/div[1]/div[1]/main/div/div/div[1]/div[3]/div[4]/div[1]/a/div/div').text
         if tweetos[0] == '@':
             reply_text = ('Super sale 😊 !! Congratulations to the new owner '+tweetos+' of '+eth_domain+' .' )
-            reply = api.update_status(status = reply_text, in_reply_to_status_id = post_result._json['id'] , auto_populate_reply_metadata=True)
+            tweet_to_quote_url= 'https://twitter.com/a_nd_w/status/'+str(post_result._json['id'])
+            reply = api.update_status(reply_text, attachment_url=tweet_to_quote_url)
         
         else:
             reply_text = ('Super sale 😊, congratulations ' +'@'+tweetos +' on our purchase!')
-            reply = api.update_status(status = reply_text, in_reply_to_status_id = post_result._json['id'] , auto_populate_reply_metadata=True)
+            tweet_to_quote_url= 'https://twitter.com/a_nd_w/status/'+str(post_result._json['id'])
+            reply = api.update_status(reply_text, attachment_url=tweet_to_quote_url)
     except:
         print('pas de compte twitter')
         pass
